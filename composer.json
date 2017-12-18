@@ -1,7 +1,8 @@
 {
     "name": "storelocator/storelocatorsystem",
     "description": "storelocatorsystem system",
-    "type": "library",
+    "type": "package",
+    "license": "MIT",
     "authors": [
         {
             "name": "ruthqv",
