@@ -3,22 +3,27 @@
     "description": "storelocatorsystem system",
     "type": "package",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "ruthqv",
-            "email": "rqvaquero@gmail.com"
-        }
-    ],
-
-    "minimum-stability": "dev",
-
-    "require": {
-        "php" : ">=5.6.4"
+    "extra": {
+        "laravel": {
+            "providers": [
+                "storelocator\\storelocatorsystem\\StorelocatorSystemServiceProvider",
+            ],
+            "aliases": {
+            "storelocator": "storelocator\\storelocatorsystem\\Facade"
+             }
+          }
     },
-
+    "authors": [{
+        "name": "ruthqv",
+        "email": "rqvaquero@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.4"
+    },
     "autoload": {
         "psr-4": {
-            "ruthqv\\storelocator\\": "src"
+            "storelocator\\storelocatorsystem\\": "src"
         }
     }
 }
