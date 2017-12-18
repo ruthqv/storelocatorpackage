@@ -76,7 +76,7 @@ class TableStores extends Migration
             $table->string('longitude', 45); 
             $table->string('latitude', 45); 
 
-            $table->integer('region_id')->unsigned();
+            $table->integer('region_id')->unsigned()->nullable();
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('no action')->onUpdate('no action');
 
             $table->integer('country_id')->unsigned();

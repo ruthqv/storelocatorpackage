@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 @include('storelocator::admin.snippets.errors')
@@ -27,7 +26,7 @@
                         <td>{{$country['id'] }}</td>
                         <td>{{$country['name'] }}</td>
                         <td>{{$country->region['name'] }}</td>
-                        <td>{{$country->country->zone['name'] }}</td>
+                        <td>{{$country->zone['name'] }}</td>
                         <td>{{$country['active'] }}</td>
 
                         <td><a href="{{route('admin.countries.show', $country['id'])}}" title="Edit this attribute" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Edit</a></td>

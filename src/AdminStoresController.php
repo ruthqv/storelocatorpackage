@@ -44,7 +44,7 @@ class AdminStoresController extends Controller
         // Sanitize input array
         $array['active'] = isset($array['active']) && $array['active'] == 1;
 
-        $created = $this->repoStore->create($array, $this->morphtables_type);
+        $created = Store::create($array);
 
         if ($created) {
             // Remove Cache
@@ -59,7 +59,7 @@ class AdminStoresController extends Controller
 
     public function show($id)
     {
-        $store = $this->repoStore->find($id);
+        $store = Store::find($id);
 
         $zones = Zone::all();
 
@@ -74,9 +74,7 @@ class AdminStoresController extends Controller
     public function update(Request $request, $id)
     {
 
-        $store = $this->repoStore->find($id);
-
-        $fields = $this->repoStore->fields('stores');
+        $store = Store::find($id);
 
         $array = $request->all();
 
@@ -89,7 +87,7 @@ class AdminStoresController extends Controller
         // Sanitize input array
         $array['active'] = isset($array['active']) && $array['active'] == 1;
 
-        $store = $this->repoStore->update($array, $id, $fields, $this->morphtables_type);
+        $store->update($array);
 
         return redirect(route('admin.stores.index'))->with('alert-success', 'The store has been updated successfully.');
 
@@ -97,7 +95,8 @@ class AdminStoresController extends Controller
 
     public function destroy($id)
     {
-        $store = $this->repoStore->delete($id, $this->morphtables_type);
+        $store = Store::find($id);
+        $store->delete();
 
         return redirect(route('admin.stores.index'))->with('alert-success', 'The stores has been removed successfully.');
 
@@ -106,23 +105,25 @@ class AdminStoresController extends Controller
     public function generatedata()
     {
 
-        $stores = $this->repoStore->all();
+        $stores = Store::all();
 
         foreach ($stores as $row) {
             $store[] = array(
-                "id"               => $row['id'],
-                "name"             => $row['name'],
-                "lat"              => $row['latitude'],
-                "lng"              => $row['longitude'],
-                "address"          => $row['address'],
-                "city"             => $row['city'],
-                "pais"             => $row['country_id'],
-                "provincia"        => Region::where('id', $row['region_id'])->pluck('name'),
-                "nombrepais"       => Country::where('id', $row['country_id'])->pluck('name'),
-                "nombrecontinente" => Zone::where('id', $row['zone_id'])->pluck('name'),
-                "continente"       => $row['zone_id'],
-                "phone"            => $row['phone'],
-                "email"            => $row['email'],
+                "id"           => $row['id'],
+                "name"         => $row['name'],
+                "lat"          => $row['latitude'],
+                "lng"          => $row['longitude'],
+                "address"      => $row['address'],
+                "city"         => $row['city'],
+                "zone_id"      => $row['zone_id'],
+                "country_id"   => $row['country_id'],
+                "region_id"    => $row['region_id'],
+                "region_name"  => Region::where('id', $row['region_id'])->value('name'),
+                "country_name" => Country::where('id', $row['country_id'])->value('name'),
+                "zone_name"    => Zone::where('id', $row['zone_id'])->value('name'),
+                "continente"   => $row['zone_id'],
+                "phone"        => $row['phone'],
+                "email"        => $row['email'],
 
             );
         }

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
-
+<div class="row">
+    
+    <a href="{{route('admin.generatedata')}}" title="generatedata" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i>Update datas for map </a>
+</div>
     <div class="row">
 
         <div class="col-md-12">

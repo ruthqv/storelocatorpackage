@@ -16,7 +16,7 @@ class Region extends Model
 
 
     public function country() {
-        return $this->belongsTo('logistic\logisticsystem\Models\Country')->where('active',1);
+        return $this->belongsTo('storelocator\storelocatorsystem\Models\Country')->where('active',1);
     }
 
 }

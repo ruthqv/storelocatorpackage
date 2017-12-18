@@ -1,11 +1,9 @@
-@extends('admin.index')
-@section('previous')
-<a type="submit" href="{{ route('admin.stores.index') }}" class="btn btn-sm btn-primary" target="_blank" title="SHOP"><i class="fa fa-angle-left"></i> SHOP</a>
-<h2>Details</h2>
 
+@extends('layouts.app')
+@section('content')
+@include('storelocator::admin.snippets.errors')
 
-    @endsection
-@section('maincontent')
+@include('storelocator::admin.snippets.flash')
  <form method="POST" action="{{ route('admin.stores.update', $store['id']) }}" accept-charset="UTF-8" enctype="multipart/form-data" role="form">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
