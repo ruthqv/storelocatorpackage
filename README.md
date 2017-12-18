@@ -37,3 +37,4 @@ $ php artisan migrate
 
 $ php artisan db:seed --class=storelocator\\storelocatorsystem\\StoresSeeder
 
+You can clone all project(Laravel with storelocatorpackage) here https://github.com/ruthqv/storelocator/
