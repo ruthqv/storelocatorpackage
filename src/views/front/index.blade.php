@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-{{--<link rel="stylesheet" type="text/css" href="{{asset(mix('/css/plugins/storelocator/storelocator.css')) }}" /> --}}
+{{--<link rel="stylesheet" type="text/css" href="{{asset('/css/plugins/storelocator/storelocator.css') }}" /> --}}
   <div class="container">
 <div class="bh-sl-container">
 

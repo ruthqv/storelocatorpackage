@@ -8,7 +8,7 @@ use storelocator\storelocatorsystem\Models\Region;
 use storelocator\storelocatorsystem\Models\Store;
 use storelocator\storelocatorsystem\Models\Zone;
 
-class AdminStoresController extends Controller
+class AdminZonesController extends Controller
 {
 
     public function index()

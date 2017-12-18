@@ -8,14 +8,14 @@ use storelocator\storelocatorsystem\Models\Region;
 use storelocator\storelocatorsystem\Models\Store;
 use storelocator\storelocatorsystem\Models\Zone;
 
-class AdminStoresController extends Controller
+class AdminCountriesController extends Controller
 {
 
     public function index()
     {
-        $stores = Store::all();
+        $countries = Store::all();
 
-        return view('storelocator::admin.stores.index', compact('stores'));
+        return view('storelocator::admin.countries.index', compact('countries'));
     }
 
     public function create()

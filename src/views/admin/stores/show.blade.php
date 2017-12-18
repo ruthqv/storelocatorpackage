@@ -15,7 +15,7 @@
 
                     <input type="text" id="name" class="form-control namefortrans" name="name" value="{{ old('name', $store['name']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'name'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'name'])
                 </div>
 
 
@@ -24,7 +24,7 @@
 
                     <input type="text" id="description" class="form-control descriptionfortrans" name="description" value="{{ old('description', $store['description']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'description'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'description'])
                 </div>
 
 
@@ -34,7 +34,7 @@
 
                     <input type="text" id="phone" class="form-control " name="phone" value="{{ old('phone', $store['phone']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'phone'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'phone'])
                 </div>
 
 
@@ -43,7 +43,7 @@
 
                     <input type="text" id="email" class="form-control " name="email" value="{{ old('email', $store['email']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'email'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'email'])
                 </div>
 
 
@@ -52,28 +52,28 @@
 
                     <input type="text" id="address" class="form-control " name="address" value="{{ old('address', $store['address']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'address'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'address'])
                 </div>
                 <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
                     <label for="city" class="control-label required">Store City:</label>
 
                     <input type="text" id="city" class="form-control " name="city" value="{{ old('city', $store['city']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'city'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'city'])
                 </div>
                 <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
                     <label for="latitude" class="control-label required">Store Latitude:</label>
 
                     <input type="text" id="latitude" class="form-control" name="latitude" value="{{ old('latitude', $store['latitude']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'latitude'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'latitude'])
                 </div>
                 <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
                     <label for="longitude" class="control-label required">Store Longitude:</label>
 
                     <input type="text" id="longitude" class="form-control " name="longitude" value="{{ old('longitude', $store['longitude']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'longitude'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'longitude'])
                 </div>
 
                 <div class="form-group{{ $errors->has('zone_id') ? ' has-error' : '' }}">
@@ -90,7 +90,7 @@
                         @endforeach
                     </select>
 
-                    @include('snippets.errors_first', ['param' => 'zone_id'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'zone_id'])
                 </div>
 
                 <div class="form-group{{ $errors->has('country_id') ? ' has-error' : '' }}">
@@ -107,7 +107,7 @@
                         @endforeach
                     </select>
 
-                    @include('snippets.errors_first', ['param' => 'country_id'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'country_id'])
                 </div>
 
                 <div class="form-group{{ $errors->has('region_id') ? ' has-error' : '' }}">
@@ -124,7 +124,7 @@
                         @endforeach
                     </select>
 
-                    @include('snippets.errors_first', ['param' => 'region_id'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'region_id'])
                 </div>
                 <div class="form-group">
                     <label for="active" class="control-label">Activo:</label>
@@ -134,7 +134,7 @@
                     <p class="help-block">Check this to mark this store as a "active" store.
                         ribbon on its thumbnail image.</p>
 
-                    @include('snippets.errors_first', ['param' => 'active'])
+                    @include('storelocator::admin.snippets.errors_first', ['param' => 'active'])
                 </div>
 
 

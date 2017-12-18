@@ -1,10 +1,7 @@
 <?php
 namespace storelocator\storelocatorsystem;
-
-
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
 
 class table_storelocator extends Seeder
 {

@@ -22,17 +22,24 @@ class StorelocatorSystemServiceProvider extends ServiceProvider
             __DIR__ . '/migrations' => database_path('migrations'),
         ], 'migrations');
 
-
         $this->publishes([
-            __DIR__.'/assets' => public_path('vendor/assets'),
-        ], 'public');
+            __DIR__ . '/assets' => resource_path('assets/stores/'),
+        ], 'assetsstores');
+
     }
 
     public function register()
     {
 
         $this->app->bind('store', 'storelocator/storelocatorsystem/Models/Store');
+        $this->app->bind('country', 'storelocator/storelocatorsystem/Models/Country');
+        $this->app->bind('region', 'storelocator/storelocatorsystem/Models/Region');
+        $this->app->bind('zone', 'storelocator/storelocatorsystem/Models/Zone');
+ 
         $this->app->make('storelocator\storelocatorsystem\AdminStoresController');
+        $this->app->make('storelocator\storelocatorsystem\AdminCountriesController');
+        $this->app->make('storelocator\storelocatorsystem\AdminZonesController');
+        $this->app->make('storelocator\storelocatorsystem\AdminRegionsController');
         $this->app->make('storelocator\storelocatorsystem\FrontStoresController');
 
     }
