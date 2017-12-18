@@ -1,30 +1,18 @@
 <?php
 namespace storelocator\storelocatorsystem;
-use Illuminate\Contracts\Events\Dispatcher;
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
 use storelocator\storelocatorsystem\Models\Store;
 
 class StorelocatorSystemServiceProvider extends ServiceProvider
 {
   
-    public function boot(Dispatcher $events)
+    public function boot()
     {
-        $this->loadViewsFrom(base_path() . '/resources/views/packages/storelocator', 'storelocator');
+        $this->loadViewsFrom(__DIR__.'/views', 'storelocator');
 
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
-
-        $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
-            $event->menu->add([
-                'icon'    => 'file',
-                'text'    => 'Store Locator',
-                'url'     => route('admin.stores.index') ,
-               
-            ]);
-
-        });
-        
         
     }
 
