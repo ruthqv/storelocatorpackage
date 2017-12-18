@@ -23,9 +23,7 @@ class StorelocatorSystemServiceProvider extends ServiceProvider
         ], 'migrations');
 
 
-        $this->publishes([
-            __DIR__.'/assets' => public_path('vendor/assets'),
-        ], 'public');
+
     }
 
     public function register()
