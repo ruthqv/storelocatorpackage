@@ -1,0 +1,13 @@
+{
+    "name": "storelocator/storelocatorsystem",
+    "description": "storelocatorsystem system",
+    "type": "library",
+    "authors": [
+        {
+            "name": "ruthqv",
+            "email": "rqvaquero@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
