@@ -6,7 +6,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "storelocator\\storelocatorsystem\\StorelocatorSystemServiceProvider",
+                "storelocator\\storelocatorsystem\\StorelocatorSystemServiceProvider"
             ],
             "aliases": {
             "storelocator": "storelocator\\storelocatorsystem\\Facade"
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "storelocator\\storelocatorsystem\\": "src"
+            "storelocator\\storelocatorsystem\\": "src/"
         }
     }
 }
