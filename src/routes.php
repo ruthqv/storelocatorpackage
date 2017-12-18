@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'role:admin']], function() {
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 
  
     Route::resource('stores', 'storelocator\storelocatorsystem\AdminStoresController');

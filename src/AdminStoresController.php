@@ -4,12 +4,8 @@ namespace storelocator\storelocatorsystem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use storelocator\storelocatorsystem\Models\Store;
-use logistic\logisticsystem\Models\Zone;
-use logistic\logisticsystem\Models\Country;
-use logistic\logisticsystem\Models\Region;
 
 use App\Models\Lang;
-use App\Repositories\Eloquent\EloquentStoreRepository;
 
 class AdminStoresController extends Controller {
     
@@ -17,19 +13,11 @@ class AdminStoresController extends Controller {
 
     public $class = 'Store';
 
-    protected $repoStore;
 
-    public function __construct(EloquentStoreRepository $store)
-    {
-        $this->middleware('auth');
-
-        $this->repoStore = $store;
-    }
 
     public function index()
     {
-        $stores = $this->repoStore->all();
-
+        $stores = Store::all();
 
         return view('storelocator::admin.stores.index', compact('stores'));
     }

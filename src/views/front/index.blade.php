@@ -1,9 +1,8 @@
 
-@extends('front.layouts.master')
+@extends('layouts.app')
 
 @section('content')
-	<link rel="stylesheet" type="text/css" href="{{asset(mix('/css/plugins/storelocator/storelocator.css')) }}" />
-
+{{--<link rel="stylesheet" type="text/css" href="{{asset(mix('/css/plugins/storelocator/storelocator.css')) }}" /> --}}
   <div class="container">
 <div class="bh-sl-container">
 
@@ -149,7 +148,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js"></script>
 <script src="https://maps.google.com/maps/api/js?key=AIzaSyDSEhEkJcS2UnkuScbq3w_YX9kRh6usf-A"></script>
 <script src="{{asset('/js/plugins/storelocator/storelocator.js') }}"></script>
-
 <script src="{{asset('/js/plugins/storelocator/buttons.js') }}"></script>
 
 

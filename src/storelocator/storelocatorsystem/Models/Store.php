@@ -2,10 +2,10 @@
 
 namespace storelocator\storelocatorsystem\Models;
 
-use App\Models\BaseModelLang;
+use Illuminate\Database\Eloquent\Model;
 
 
-class Store extends BaseModelLang
+class Store extends Model
 {
 
      
@@ -16,11 +16,11 @@ class Store extends BaseModelLang
 
 
     public function country() {
-        return $this->belongsTo('logistic\logisticsystem\Models\Country');
+        return $this->belongsTo('storelocator\storelocatorsystem\Models\Country');
     }
 
     public function region() {
-        return $this->belongsTo('logistic\logisticsystem\Models\Region');
+        return $this->belongsTo('storelocator\storelocatorsystem\Models\Region');
     }
 
 }

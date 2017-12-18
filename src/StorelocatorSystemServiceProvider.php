@@ -21,6 +21,13 @@ class StorelocatorSystemServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/migrations' => database_path('migrations'),
         ], 'migrations');
+
+        $this->mergeConfigFrom(
+            __DIR__ . 'storelocator.php', 'storelocator'
+        );
+        $this->publishes([
+            __DIR__.'assets' => public_path('vendor/assets'),
+        ], 'public');
     }
 
     public function register()
