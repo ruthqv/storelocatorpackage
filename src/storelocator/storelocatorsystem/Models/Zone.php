@@ -18,4 +18,5 @@ class Zone extends Model
      public function countries() {
         return $this->hasMany('storelocator\storelocatorsystem\Models\Country');
     }
+    
 }

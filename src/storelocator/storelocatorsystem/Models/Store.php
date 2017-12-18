@@ -22,5 +22,7 @@ class Store extends Model
     public function region() {
         return $this->belongsTo('storelocator\storelocatorsystem\Models\Region');
     }
-
+    public function zone() {
+        return $this->belongsTo('storelocator\storelocatorsystem\Models\Zone');
+    }
 }

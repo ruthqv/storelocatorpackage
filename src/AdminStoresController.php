@@ -109,19 +109,18 @@ class AdminStoresController extends Controller
 
         foreach ($stores as $row) {
             $store[] = array(
-                "id"           => $row['id'],
+                "id"           => "" .$row['id']."",
                 "name"         => $row['name'],
                 "lat"          => $row['latitude'],
                 "lng"          => $row['longitude'],
                 "address"      => $row['address'],
                 "city"         => $row['city'],
-                "zone_id"      => $row['zone_id'],
-                "country_id"   => $row['country_id'],
-                "region_id"    => $row['region_id'],
+                "zone_id"      => "" . $row['zone_id'] ."",
+                "country_id"   => "". $row['country_id'] . "",
+                "region_id"    => "". $row['region_id'] ."",
                 "region_name"  => Region::where('id', $row['region_id'])->value('name'),
                 "country_name" => Country::where('id', $row['country_id'])->value('name'),
                 "zone_name"    => Zone::where('id', $row['zone_id'])->value('name'),
-                "continente"   => $row['zone_id'],
                 "phone"        => $row['phone'],
                 "email"        => $row['email'],
 

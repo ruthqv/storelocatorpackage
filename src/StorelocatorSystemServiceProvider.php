@@ -20,11 +20,15 @@ class StorelocatorSystemServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/migrations' => database_path('migrations'),
-        ], 'migrations');
+        ], 'migrationsstores');
 
         $this->publishes([
             __DIR__ . '/assets' => resource_path('assets/stores/'),
         ], 'assetsstores');
+
+    $this->publishes([
+        __DIR__.'/config/storelocator.php' => config_path('storelocator.php')
+    ], 'config');
 
     }
 

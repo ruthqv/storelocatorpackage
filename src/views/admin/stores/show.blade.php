@@ -109,9 +109,9 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('region_id') ? ' has-error' : '' }}">
-                    <label for="region-id" class="control-label required">Country:</label>
+                    <label for="region-id" class="control-label required">Region:</label>
 
-                    <select id="region-id" class="form-control" name="region_id" required>
+                    <select id="region-id" class="form-control" name="region_id">
                         <option value="">Select one</option>
 
                         @foreach($regions as $region)

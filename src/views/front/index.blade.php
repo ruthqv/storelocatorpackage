@@ -1,12 +1,16 @@
- @extends('layouts.app') @section('content') 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="{{asset('/stores/css/storelocator.css') }}" /> 
 <div class="container">
     <div class="bh-sl-container">
         <div class="row clearfix">
             <div class="col-sm-3 col-xs-12">
+
+
+
+
                 <fieldset class="bordgre">
                     <legend>
-                        <p class="catcol bh-sl-title custom_font_rudy textocentrado">{{ __('Store_locator') }}</p>
+                        <p class="catcol bh-sl-title custom_font_rudy textocentrado">STORE LOCATOR</p>
                     </legend>
                     <div class="row">
                         <form role="form" class="col-centered" id="bh-sl-user-location" method="post" action="#">
@@ -17,7 +21,7 @@
                                 </div>
                             </div>
                             <p class="bordbut">
-                                <button id="miposi" class="nobut"><i class="icon-location-arrow"></i> Buscar tiendas cercanas a mi ubicación actual</button>
+                                <button id="miposi" class="nobut"><i class="icon-location-arrow"></i> Look for most near shops</button>
                             </p>
                     </div>
                     <div class="row">
@@ -40,34 +44,45 @@
                         </p>
                     </div>
                     <div class="row">
+                                <?php foreach ($stores as $store){
+                                    $zones[] = $store->country->zone;
+                                }
+                                $zones = array_unique($zones);
+                                ;?>
                         <p class="bordbut">
-                            <button data-toggle="collapse" data-target="#conti" class="nobut">CONTINENT<span class="caret"></span></button>
+                            <button data-toggle="collapse" data-target="#zone_id" class="nobut">ZONE<span class="caret"></span></button>
                         </p>
-                        <div id="conti" class="collapse bh-sl-filters-container">
-                            <ul id="continente-filter" class="bh-sl-filters">
+                        <div id="zone_id" class="collapse bh-sl-filters-container">
+                            <ul id="zone-filter" class="bh-sl-filters">
                                 <li>
-                                    <input type="radio" name="continente" value="" id="noradio"> Todos/Reset
+                                    <input type="radio" name="zone_id" value="" id="noradio">Todos/Reset
                                 </li>
-                                @foreach ($stores as $store)
+                                @foreach ($zones as $zone)                                
                                 <li>
-                                    <input type="radio" name="continente" value="{{$store->country->zone['id']}} " id="noradio"> {{$store->country->zone['name']}} </input>
+                                    <input type="radio" name="zone_id" value="{{$zone['id']}}" id="noradio" /> {{$zone['name']}} 
                                 </li>
                                 @endforeach
                             </ul>
                         </div>
                     </div>
                     <div class="row">
+                               <?php foreach ($stores as $store){
+                                    $countries[] = $store->country;
+                                }
+                                $countries = array_unique($countries);
+                                ;?>
                         <p class="bordbut">
-                            <button data-toggle="collapse" data-target="#pais" class="nobut">COUNTRY<span class="caret"></span></button>
+                            <button data-toggle="collapse" data-target="#country_id" class="nobut">COUNTRY <span class="caret"></span></button>
                         </p>
-                        <div id="pais" class="collapse bh-sl-filters-container">
-                            <ul id="pais-filter" class="bh-sl-filters">
+                        <div id="country_id" class="collapse bh-sl-filters-container">
+                            <ul id="country-filter" class="bh-sl-filters">
                                 <li>
-                                    <input type="radio" name="pais" value="" id="noradio"> Todos/Reset
+                                    <input type="radio" name="country_id" value="" id="noradio"> Todos/Reset
                                 </li>
-                                @foreach ($stores as $store)
+                                @foreach ($countries as $country)                                
+
                                 <li>
-                                    <input type="radio" name="pais" value=" {{$store->country['id']}} " id="noradio"> {{$store->country['name']}} </input>
+                                    <input type="radio" name="country_id" value="{{$country['id']}}" id="noradio" /> {{$country['name']}} 
                                 </li>
                                 @endforeach
                             </ul>
@@ -94,13 +109,19 @@
         </div>
     </div>
 </div>
-@endsection @section('footer')
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js"></script>
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyDSEhEkJcS2UnkuScbq3w_YX9kRh6usf-A"></script>
-<script src="{{asset('/stores/js/storelocator.js') }}"></script>
-<script src="{{asset('/stores/js//buttons.js') }}"></script>
+<script>
+    var api_key = {!! json_encode(config('storelocator.API_KEY') ) !!};
+    document.write("<script src='https://maps.google.com/maps/api/js?key="+ api_key + "'><\/script>");
+</script>
+<!-- <script src='https://maps.google.com/maps/api/js?key='"+ api_key +'" ></script>
+ -->
+ <script src="{{asset('/stores/js/storelocator.js') }}"></script>
+<script src="{{asset('/stores/js/buttons.js') }}"></script>
 <script>
 $(document).ready(function() {
     $('#bh-sl-map-container').storeLocator({
@@ -111,9 +132,9 @@ $(document).ready(function() {
         'markerImg': 'storesfiles/img/marcador.png',
         'markerDim': { height: 42, width: 35 },
         'taxonomyFilters': {
-            'category': 'category-filter',
-            'pais': 'pais-filter',
-            'continente': 'continente-filter',
+            'country_id': 'country-filter',
+            'zone_id': 'zone-filter',
+            // 'category': 'category-filter',
             /*'postal': 'postal-filter'*/
         },
         'inlineDirections': true,
@@ -168,4 +189,3 @@ $(document).ready(function() {
     });
 });
 </script>
-@endsection
