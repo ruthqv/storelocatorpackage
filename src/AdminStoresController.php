@@ -3,10 +3,10 @@ namespace storelocator\storelocatorsystem;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use storelocator\storelocatorsystem\Models\Country;
-use storelocator\storelocatorsystem\Models\Region;
+use geo\geosystem\Models\Country;
+use geo\geosystem\Models\Region;
 use storelocator\storelocatorsystem\Models\Store;
-use storelocator\storelocatorsystem\Models\Zone;
+use geo\geosystem\Models\Zone;
 
 class AdminStoresController extends Controller
 {

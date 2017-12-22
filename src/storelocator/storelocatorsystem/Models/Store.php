@@ -16,13 +16,13 @@ class Store extends Model
 
 
     public function country() {
-        return $this->belongsTo('storelocator\storelocatorsystem\Models\Country');
+        return $this->belongsTo('geo\geosystem\Models\Country');
     }
 
     public function region() {
-        return $this->belongsTo('storelocator\storelocatorsystem\Models\Region');
+        return $this->belongsTo('geo\geosystem\Models\Region');
     }
     public function zone() {
-        return $this->belongsTo('storelocator\storelocatorsystem\Models\Zone');
+        return $this->belongsTo('geo\geosystem\Models\Zone');
     }
 }
