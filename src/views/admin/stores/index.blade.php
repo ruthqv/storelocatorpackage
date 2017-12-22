@@ -1,5 +1,8 @@
-@extends('layouts.app')
-@section('content')
+@extends('admin.index')
+@section('previous')
+<a type="submit" href="{{ route('admin.home') }}" class="btn btn-sm btn-primary" target="_blank" title="GO BACK"><i class="fa fa-angle-left"></i> GO BACK</a>
+@endsection
+@section('maincontent')
 <div class="row">
     
     <a href="{{route('admin.generatedata')}}" title="generatedata" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i>Update datas for map </a>

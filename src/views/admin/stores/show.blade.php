@@ -1,9 +1,8 @@
-
-@extends('layouts.app')
-@section('content')
-@include('storelocator::admin.snippets.errors')
-
-@include('storelocator::admin.snippets.flash')
+@extends('admin.index')
+@section('previous')
+<a type="submit" href="{{ route('admin.home') }}" class="btn btn-sm btn-primary" target="_blank" title="GO BACK"><i class="fa fa-angle-left"></i> GO BACK</a>
+@endsection
+@section('maincontent')
  <form method="POST" action="{{ route('admin.stores.update', $store['id']) }}" accept-charset="UTF-8" enctype="multipart/form-data" role="form">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruthqv/geopackage.git",
-                "reference": "afb84ffabfb35bf81cf1565719681cc59dfd51ad"
+                "reference": "a47bb65dea673f77be8b8258f357a65dd3a9bce9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ruthqv/geopackage/zipball/afb84ffabfb35bf81cf1565719681cc59dfd51ad",
-                "reference": "afb84ffabfb35bf81cf1565719681cc59dfd51ad",
+                "url": "https://api.github.com/repos/ruthqv/geopackage/zipball/a47bb65dea673f77be8b8258f357a65dd3a9bce9",
+                "reference": "a47bb65dea673f77be8b8258f357a65dd3a9bce9",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 }
             ],
             "description": "geopackage system",
-            "time": "2017-12-22T04:44:31+00:00"
+            "time": "2017-12-22T07:17:28+00:00"
         }
     ],
     "packages-dev": [],
