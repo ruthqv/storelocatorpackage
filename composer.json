@@ -19,7 +19,9 @@
     }],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.6.4"
+        "php": ">=5.6.4",
+        "geopackage/geosystem": "dev-master"
+
     },
     "autoload": {
         "psr-4": {

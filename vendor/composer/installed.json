@@ -1,0 +1,50 @@
+[
+    {
+        "name": "geopackage/geosystem",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ruthqv/geopackage.git",
+            "reference": "afb84ffabfb35bf81cf1565719681cc59dfd51ad"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ruthqv/geopackage/zipball/afb84ffabfb35bf81cf1565719681cc59dfd51ad",
+            "reference": "afb84ffabfb35bf81cf1565719681cc59dfd51ad",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.4"
+        },
+        "time": "2017-12-22T04:44:31+00:00",
+        "type": "package",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "geo\\geosystem\\GeoSystemServiceProvider"
+                ],
+                "aliases": {
+                    "geo": "geo\\geosystem\\Facade"
+                }
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "geo\\geosystem\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "ruthqv",
+                "email": "rqvaquero@gmail.com"
+            }
+        ],
+        "description": "geopackage system"
+    }
+]

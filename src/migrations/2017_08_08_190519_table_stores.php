@@ -9,58 +9,7 @@ class TableStores extends Migration
     public function up()
     {
 
-        // Esto ocurriria si logistic system esta migrada
-        if (!Schema::hasTable('zones'))  {
-        Schema::create('zones', function(Blueprint $table)
-        {
-            $table->increments('id');
-            
-            $table->string('name',100);
-            
-            $table->boolean('active')->default(1);
-
-            $table->timestamps();
-            $table->softDeletes();
-        });
-
-
-
-        }
-        if (!Schema::hasTable('countries'))  {
-
-        Schema::create('countries', function(Blueprint $table)
-        {
-            $table->increments('id');
-            $table->string('name',100);
-            $table->string('iso');
-            $table->boolean('active')->default(1);
-            $table->integer('zone_id')->unsigned()->index();
-            $table->foreign('zone_id')->references('id')->on('zones');              
-            $table->timestamps();
-            $table->softDeletes();
-
-        });
-
-        }
-        if (!Schema::hasTable('regions'))  {
-
-        Schema::create('regions', function(Blueprint $table)
-        {
-            $table->increments('id');
-            $table->string('name',100);
-            $table->integer('country_id')->unsigned();
-            $table->foreign('country_id')->references('id')->on('countries');
-            $table->boolean('active')->default(1);
-                    
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    
-        }
-
-
-
-
+  
 // tabla propia del paquete
 
         Schema::create('stores', function (Blueprint $table)

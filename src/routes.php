@@ -2,14 +2,6 @@
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['web'] ], function() {
 
- 
-    Route::resource('stores', 'storelocator\storelocatorsystem\AdminStoresController');
-
-    Route::resource('countries', 'storelocator\storelocatorsystem\AdminCountriesController');
-
-    Route::resource('zones', 'storelocator\storelocatorsystem\AdminZonesController');
-
-    Route::resource('regions', 'storelocator\storelocatorsystem\AdminRegionsController');
 
     Route::any('generatedata', 'storelocator\storelocatorsystem\AdminStoresController@generatedata')->name('generatedata');
 

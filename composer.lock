@@ -1,0 +1,68 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a18e0084b992ecd7800d00b6a1eeef7a",
+    "packages": [
+        {
+            "name": "geopackage/geosystem",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruthqv/geopackage.git",
+                "reference": "afb84ffabfb35bf81cf1565719681cc59dfd51ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruthqv/geopackage/zipball/afb84ffabfb35bf81cf1565719681cc59dfd51ad",
+                "reference": "afb84ffabfb35bf81cf1565719681cc59dfd51ad",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "geo\\geosystem\\GeoSystemServiceProvider"
+                    ],
+                    "aliases": {
+                        "geo": "geo\\geosystem\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "geo\\geosystem\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ruthqv",
+                    "email": "rqvaquero@gmail.com"
+                }
+            ],
+            "description": "geopackage system",
+            "time": "2017-12-22T04:44:31+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "geopackage/geosystem": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.6.4"
+    },
+    "platform-dev": []
+}
