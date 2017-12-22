@@ -7,7 +7,8 @@ Demo here http://storelocator.webandwebs.com/stores
 
 Package built with https://github.com/bjorn2404/jQuery-Store-Locator-Plugin library. Allows you charge Countries, Zones, Regions, and Stores, and localize this last ones over Google Maps. 
 
-Tested in Laravel 5.5.
+Development package in a not stable way yet. Please, use only if you be sure to be able to make it compatible with your APP, or in a contributive way. It is only tested under specific App enviroment (Blade Layouts extensions, 'adminlittle' admin template etc).
+Don´t hesitate to contact me for more info.
 
 Installation steps over a clean Laravel installation (v 5.5):
 
@@ -33,8 +34,7 @@ use Illuminate\Support\Facades\Schema;
 
 $ php artisan migrate
 
-
-
 $ php artisan db:seed --class=storelocator\\storelocatorsystem\\StoresSeeder
 
 You can clone all project(Laravel with storelocatorpackage) here https://github.com/ruthqv/storelocator/
+

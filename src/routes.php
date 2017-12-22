@@ -65,7 +65,7 @@ Route::get('/storesfiles/img/{filename}', function ($filename) {
     }
 
     $file = File::get($path);
-
+    $response->header('Content-Type', 'image/png');
     $response = Response::make($file, 200);
 
     return $response;
