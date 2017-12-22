@@ -16,19 +16,29 @@ class StorelocatorSystemServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/views' => resource_path('views/vendor/storelocator'),
-        ]);
+        ],'stores-views');
 
         $this->publishes([
             __DIR__ . '/migrations' => database_path('migrations'),
-        ], 'migrationsstores');
+        ], 'stores-migrations');
 
         $this->publishes([
             __DIR__ . '/assets' => resource_path('assets/stores/'),
-        ], 'assetsstores');
+        ], 'stores-assets');
 
-    $this->publishes([
-        __DIR__.'/config/storelocator.php' => config_path('storelocator.php')
-    ], 'config');
+        $this->publishes([
+            __DIR__.'/config/storelocator.php' => config_path('storelocator.php')
+        ], 'stores-config');
+
+        $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
+            $event->menu->add([
+                'icon'    => 'file',
+                'text'    => 'Stores',
+                'url'     => route('admin.stores'),
+                
+            ]);
+        });
+
 
     }
 
