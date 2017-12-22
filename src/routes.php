@@ -1,29 +1,23 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['web'] ], function() {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['web']], function () {
 
+    Route::resource('stores', 'storelocator\storelocatorsystem\AdminStoresController');
 
     Route::any('generatedata', 'storelocator\storelocatorsystem\AdminStoresController@generatedata')->name('generatedata');
 
 });
 
-
-
-
-Route::group(['prefix' => 'stores', 'as' => 'stores'], function() {
+Route::group(['prefix' => 'stores', 'as' => 'stores'], function () {
 
     Route::any('/', 'storelocator\storelocatorsystem\FrontStoresController@index');
 
+});
 
-
-  });
-
-
-
-    Route::get('/stores/css/{filename}', function($filename){
+Route::get('/stores/css/{filename}', function ($filename) {
     $path = resource_path() . '/assets/stores/css/' . $filename;
 
-    if(!File::exists($path)) {
+    if (!File::exists($path)) {
         return response()->json(['message' => 'Not found.'], 404);
     }
 
@@ -35,10 +29,10 @@ Route::group(['prefix' => 'stores', 'as' => 'stores'], function() {
     return $response;
 });
 
-    Route::get('/stores/js/{filename}', function($filename){
+Route::get('/stores/js/{filename}', function ($filename) {
     $path = resource_path() . '/assets/stores/js/' . $filename;
 
-    if(!File::exists($path)) {
+    if (!File::exists($path)) {
         return response()->json(['message' => 'Not found.'], 404);
     }
 
@@ -50,11 +44,10 @@ Route::group(['prefix' => 'stores', 'as' => 'stores'], function() {
     return $response;
 });
 
-
-    Route::get('/storesfiles/templates/{filename}', function($filename){
+Route::get('/storesfiles/templates/{filename}', function ($filename) {
     $path = resource_path() . '/assets/stores/templates/' . $filename;
 
-    if(!File::exists($path)) {
+    if (!File::exists($path)) {
         return response()->json(['message' => 'Not found.'], 404);
     }
 
@@ -64,10 +57,10 @@ Route::group(['prefix' => 'stores', 'as' => 'stores'], function() {
 
     return $response;
 });
-    Route::get('/storesfiles/img/{filename}', function($filename){
+Route::get('/storesfiles/img/{filename}', function ($filename) {
     $path = resource_path() . '/assets/stores/img/' . $filename;
 
-    if(!File::exists($path)) {
+    if (!File::exists($path)) {
         return response()->json(['message' => 'Not found.'], 404);
     }
 
@@ -78,10 +71,10 @@ Route::group(['prefix' => 'stores', 'as' => 'stores'], function() {
     return $response;
 });
 
-    Route::get('/storesfiles/{filename}', function($filename){
+Route::get('/storesfiles/{filename}', function ($filename) {
     $path = resource_path() . '/assets/stores/' . $filename;
 
-    if(!File::exists($path)) {
+    if (!File::exists($path)) {
         return response()->json(['message' => 'Not found.'], 404);
     }
 
@@ -91,4 +84,4 @@ Route::group(['prefix' => 'stores', 'as' => 'stores'], function() {
     $response->header('Content-Type', 'application/json');
 
     return $response;
-});    
+});

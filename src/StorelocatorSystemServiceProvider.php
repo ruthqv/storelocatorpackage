@@ -36,7 +36,7 @@ class StorelocatorSystemServiceProvider extends ServiceProvider
             $event->menu->add([
                 'icon' => 'file',
                 'text' => 'Stores',
-                'url'  => route('admin.stores'),
+                'url'  => route('admin.stores.index'),
 
             ]);
         });
