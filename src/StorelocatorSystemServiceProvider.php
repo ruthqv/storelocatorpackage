@@ -29,6 +29,10 @@ class StorelocatorSystemServiceProvider extends ServiceProvider
         ], 'stores-assets');
 
         $this->publishes([
+            __DIR__ . '/img' => public_path('img/stores/'),
+        ], 'stores-img');
+
+        $this->publishes([
             __DIR__ . '/config/storelocator.php' => config_path('storelocator.php'),
         ], 'stores-config');
 

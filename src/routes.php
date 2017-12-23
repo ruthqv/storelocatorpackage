@@ -58,7 +58,7 @@ Route::get('/storesfiles/templates/{filename}', function ($filename) {
     return $response;
 });
 Route::get('/storesfiles/img/{filename}', function ($filename) {
-    $path = resource_path() . '/assets/stores/img/' . $filename;
+    $path = public_path() . '/img/stores/' . $filename;
 
     if (!File::exists($path)) {
         return response()->json(['message' => 'Not found.'], 404);
