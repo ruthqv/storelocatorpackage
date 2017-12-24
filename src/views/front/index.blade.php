@@ -130,7 +130,7 @@ $(document).ready(function() {
         'slideMap': false,
         'fullMapStartListLimit': false,
         'storeLimit': 500,
-        'markerImg': 'storesfiles/img/marcador.png',
+        'markerImg': 'img/stores/marcador.png',
         'markerDim': { height: 42, width: 35 },
         'taxonomyFilters': {
             'country_id': 'country-filter',
@@ -143,7 +143,7 @@ $(document).ready(function() {
 
 
         'markerCluster': {
-            imagePath: 'storesfiles/img/m',
+            imagePath: 'img/stores/m',
             minimumClusterSize: 2,
             gridSize: 100,
             maxZoom: null,
